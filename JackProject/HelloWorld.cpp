@@ -47,20 +47,36 @@ string emailAddress(string s1, string s2) {
 	return newString;
 }
 	
-	
 
+string randomGender(){
+	string gender[] = {"Male", "Female", "Mental"};
+	srand(time(NULL));
+	return gender[rand() % 3];
+}
+
+class JackDude {
+public:
+	string name;
+	string email;
+	string gender;
+};
 
 
 int main() {
 
+	JackDude Jack;
+	string firstName = fullName[0];
+	string surName = fullName[1];
+	Jack.name = firstName + " " + surName;
+	Jack.email = emailAddress(firstName, surName);
+	Jack.gender = randomGender();
 	
-	
-
-	cout << "The first name is: " << fullName[0] << endl;
-	cout << "The surname is: " << fullName[1] << endl;
 
 
-	cout << "The email address is: " << emailAddress(fullName[0],fullName[1]) << endl;
+	cout << "The name is: " << Jack.name << endl;
+	cout << "The email address is: " << Jack.email << endl;
+	cout << "Gender: " << Jack.gender << endl;
 
+	cin.get();
 	return 0;
 }
